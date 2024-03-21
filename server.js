@@ -108,9 +108,9 @@ router.route('/movies')
         o.message = "movie updated";
         res.json(o);
     })
-    .delete(authController.isAuthenticated, (req, res) => {
+    .delete(authJwtController.isAuthenticated, (req, res) => {
         // HTTP DELETE Method
-        // Requires Basic authentication.
+        // Requires JWT authentication.
         // Returns a JSON object with status, message, headers, query, and env.
         var o = getJSONObjectForMovieRequirement(req);
         o.status = 200;
